@@ -1,25 +1,43 @@
-import { useState } from "react"
+import React from 'react'
 import styles from "./App.module.css"
-import {Chat} from "./components/Chat/chat"
-function App() {
-   const [Messages, setMessages]=useState(0);
+import Chat from "./components/Chat/Chat"
+import { useState } from 'react'
+import { Controls } from './components/controls/controls'
 
+function App  () {
+  const [messages , setmessages] = useState(MESSAGES);
   return (
     <div className={styles.App}>
       <header className={styles.Header}>
-      <img className={styles.Logo} src="/chatbot.png" alt="" />
-      <h2 className={styles.Title}>AI chatbot</h2>
-</header>
-<div className={styles.ChatContainer}>
-  <Chat />
-</div>
-      </div>
+        <img  className={styles.Logo} src="/chatbot.png" alt="" />
+        <h1 className={styles.Title}>Ai Chatbot</h1>
+        </header>
+        <div className={styles.ChatContainer}>
+          <Chat messages={messages} />
+        </div>
+      <Controls />
+    </div>
   )
 }
 
-const MESSAGES ={
-  role:'user',
-  content:"AAnything ca n be done"
-}
+const MESSAGES = [
+  {
+    role: 'User',
+    content: 'Hello myself parth'
+  },
+  {
+    role: 'Assistant',
+    content: 'Hi Parth! How can I help you today?'
+  },
+  {
+    role: 'User',
+    content: 'How are you?'
+  },
+  {
+    role: 'Assistant',
+    content: 'I am doing great, thanks for asking!'
+  }
+]
+
 
 export default App

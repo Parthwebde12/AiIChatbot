@@ -1,7 +1,13 @@
-import React from 'react'
+import styles from "./chat.module.css";
 
-export const chat = ({messages}) => {
+export function Chat({ messages }) {
   return (
-    <div>chat</div>
-  )
+    <div className={styles.Chat}>
+      {messages.map(({ role, content }, index) => (
+        <div key={index} className={styles.Message} data-role={role}>
+          {content}
+        </div>
+      ))}
+    </div>
+  );
 }
