@@ -1,43 +1,27 @@
-import React from 'react'
-import styles from "./App.module.css"
-import Chat from "./components/Chat/Chat"
-import { useState } from 'react'
-import { Controls } from './components/controls/controls'
+import { useState } from "react";
+import { Chat } from "./components/Chat/Chat";
+import { Controls } from "./components/Controls/Controls";
+import styles from "./App.module.css";
 
-function App  () {
-  const [messages , setmessages] = useState(MESSAGES);
+function App() {
+  const [messages, setMessages] = useState([]);
+
+  function handleContentSend(content) {
+    setMessages((prevMessages) => [...prevMessages, { content, role: "user" }]);
+  }
+
   return (
     <div className={styles.App}>
       <header className={styles.Header}>
-        <img  className={styles.Logo} src="/chatbot.png" alt="" />
-        <h1 className={styles.Title}>Ai Chatbot</h1>
-        </header>
-        <div className={styles.ChatContainer}>
-          <Chat messages={messages} />
-        </div>
-      <Controls />
+        <img className={styles.Logo} src="public/smart_toy_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg " />
+        <h2 className={styles.Title}>AI Chatbot</h2>
+      </header>
+      <div className={styles.ChatContainer}>
+        <Chat messages={messages} />
+      </div>
+      <Controls onSend={handleContentSend} />
     </div>
-  )
+  );
 }
 
-const MESSAGES = [
-  {
-    role: 'User',
-    content: 'Hello myself parth'
-  },
-  {
-    role: 'Assistant',
-    content: 'Hi Parth! How can I help you today?'
-  },
-  {
-    role: 'User',
-    content: 'How are you?'
-  },
-  {
-    role: 'Assistant',
-    content: 'I am doing great, thanks for asking!'
-  }
-]
-
-
-export default App
+export default App;

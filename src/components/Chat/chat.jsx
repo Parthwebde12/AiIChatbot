@@ -1,4 +1,9 @@
-import styles from "./chat.module.css";
+import styles from "./Chat.module.css";
+
+const WELCOME_MESSAGE={
+  role:'assistant',
+  content :'Hello! How can i assist you now?',
+}
 
 export function Chat({ messages }) {
   return (

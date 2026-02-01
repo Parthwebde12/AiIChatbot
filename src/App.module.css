@@ -1,26 +1,30 @@
 .App {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    height: 100vh;
-    padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  height: 100vh;
+  padding: 16px;
 }
-.Header{
-    text-align: center;
-}
-.Logo{
-    width: 64px;
-    height: 64px;
 
+.Header {
+  text-align: center;
 }
-.Title{
-    margin: 0;
+
+.Logo {
+  width: 64px;
+  height: 64px;
 }
-.ChatContainer{
-    flex-grow: 1;
-    width: 100%;
-    background: white;
-    border-radius: 15px;
-    overflow-y: auto;
+
+.Title {
+  margin: 0;
+}
+
+.ChatContainer {
+  flex-grow: 1;
+  width: 100%;
+  background:white;
+  color: black;
+  border-radius: 16px;
+  overflow-y: auto;
 }
